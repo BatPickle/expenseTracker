@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: #f2f0e6; /* Light beige */
     color: #333;
     display: flex;
@@ -15,7 +15,7 @@ body {
     background-color: #dcd7c8; /* Warm beige */
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     width: 100%;
     max-width: 320px;
     text-align: center;
@@ -24,6 +24,7 @@ body {
 
 h1, h2, h3 {
     margin-bottom: 10px;
+    transition: color 0.3s ease; /* Smooth color transition */
 }
 
 form {
@@ -36,6 +37,11 @@ input, select {
     margin: 5px 0;
     border: 1px solid #ccc;
     border-radius: 4px;
+    transition: border-color 0.3s ease; /* Smooth border color transition */
+}
+
+input:focus, select:focus {
+    border-color: #a8c0a0; /* Change border color on focus */
 }
 
 button {
@@ -46,10 +52,29 @@ button {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
 }
 
 button:hover {
     background-color: #88a780; /* Slightly darker green */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+.clear-btn {
+    width: 50%; /* Smaller width */
+    padding: 6px 12px; /* Smaller padding */
+    background-color: #bc8f8f; /* Soft red-brown */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
+    margin-top: 10px; /* Added margin for spacing */
+}
+
+.clear-btn:hover {
+    background-color: #a07878; /* Slightly darker red-brown */
+    transform: translateY(-2px); /* Slight lift effect */
 }
 
 .categories {
@@ -57,14 +82,21 @@ button:hover {
     flex-direction: column;
     gap: 10px;
     width: 100%;
+    padding: 0 20px; /* Added padding to align with container */
 }
 
 .category-box {
     background-color: #c6d3d0; /* Soft gray-green */
-    padding: 10px;
+    padding: 20px;
     border-radius: 8px;
     width: 100%;
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.category-box:hover {
+    transform: translateY(-5px); /* Slight lift effect */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
 }
 
 ul {
@@ -82,6 +114,11 @@ li {
     justify-content: space-between;
     align-items: center;
     font-weight: bold; /* Bold each expense entry */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+li:hover {
+    background-color: #bfb6a6; /* Slightly darker tan on hover */
 }
 
 .total {
@@ -96,10 +133,12 @@ li {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
 }
 
 .remove-btn:hover {
     background-color: #a07878; /* Slightly darker red-brown */
+    transform: translateY(-2px); /* Slight lift effect */
 }
 
 /* Responsive design for smaller screens */
@@ -107,6 +146,7 @@ li {
     .categories {
         flex-direction: row;
         justify-content: space-around;
+        padding: 0; /* Remove padding for larger screens */
     }
 
     .category-box {

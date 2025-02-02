@@ -13,6 +13,10 @@ document.getElementById('expense-form').addEventListener('submit', function(e) {
     }
 });
 
+document.getElementById('clear-all').addEventListener('click', function() {
+    confirmClearAll();
+});
+
 function addExpense(name, amount, category) {
     const expenseList = document.getElementById(`${category.toLowerCase().replace(/ /g, '-')}-list`);
     const expenseItem = document.createElement('li');
@@ -68,6 +72,31 @@ function loadExpenses() {
     const savedExpenses = JSON.parse(localStorage.getItem('expenses')) || [];
     savedExpenses.forEach(expense => addExpense(expense.name, expense.amount, expense.category));
     updateTotals();
+}
+
+function confirmClearAll() {
+    const clearAllBtn = document.getElementById('clear-all');
+    clearAllBtn.textContent = 'Are you sure?';
+    clearAllBtn.onclick = function() {
+        clearAllExpenses();
+    };
+}
+
+function clearAllExpenses() {
+    const categories = ['fast-food', 'groceries', 'other-purchases'];
+
+    categories.forEach(category => {
+        const expenseList = document.getElementById(`${category}-list`);
+        while (expenseList.firstChild) {
+            expenseList.removeChild(expenseList.firstChild);
+        }
+        document.getElementById(`${category}-total`).textContent = '0.00';
+    });
+
+    document.getElementById('total-amount').textContent = '0.00';
+    localStorage.removeItem('expenses');
+    document.getElementById('clear-all').textContent = 'Clear All';
+    document.getElementById('clear-all').onclick = confirmClearAll;
 }
 
 // Load expenses when the page is loaded

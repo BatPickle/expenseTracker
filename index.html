@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Expense Tracker</h1>
+        <form id="expense-form">
+            <input type="text" id="expense-name" placeholder="Expense Name" required>
+            <input type="number" id="expense-amount" placeholder="Amount" required>
+            <select id="expense-category" required>
+                <option value="" disabled selected>Select Category</option>
+                <option value="Fast Food">Fast Food</option>
+                <option value="Groceries">Groceries</option>
+                <option value="Other Purchases">Other Purchases</option>
+            </select>
+            <button type="submit">Add Expense</button>
+        </form>
+        <div class="total">
+            <h2>Grand Total: $<span id="total-amount">0</span></h2>
+        </div>
+    </div>
+    <div class="categories">
+        <div class="category-box">
+            <h2>Fast Food</h2>
+            <ul id="fast-food-list"></ul>
+            <h3>Category Total: $<span id="fast-food-total">0</span></h3>
+        </div>
+        <div class="category-box">
+            <h2>Groceries</h2>
+            <ul id="groceries-list"></ul>
+            <h3>Category Total: $<span id="groceries-total">0</span></h3>
+        </div>
+        <div class="category-box">
+            <h2>Other Purchases</h2>
+            <ul id="other-purchases-list"></ul>
+            <h3>Category Total: $<span id="other-purchases-total">0</span></h3>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

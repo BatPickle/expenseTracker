@@ -9,6 +9,7 @@ body {
     height: 100vh;
     margin: 0;
     padding: 20px;
+    transition: background-color 0.3s ease; /* Smooth background color transition */
 }
 
 .container {
@@ -102,54 +103,4 @@ button:hover {
 ul {
     list-style-type: none;
     padding: 0;
-    margin: 10px 0;
-}
-
-li {
-    padding: 8px;
-    background-color: #d3cdc4; /* Soft tan */
-    margin-bottom: 5px;
-    border-radius: 4px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: bold; /* Bold each expense entry */
-    transition: background-color 0.3s ease; /* Smooth background color transition */
-}
-
-li:hover {
-    background-color: #bfb6a6; /* Slightly darker tan on hover */
-}
-
-.total {
-    margin-top: 20px;
-}
-
-.remove-btn {
-    margin-left: 10px;
-    padding: 4px 8px;
-    background-color: #bc8f8f; /* Soft red-brown */
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
-}
-
-.remove-btn:hover {
-    background-color: #a07878; /* Slightly darker red-brown */
-    transform: translateY(-2px); /* Slight lift effect */
-}
-
-/* Responsive design for smaller screens */
-@media (min-width: 600px) {
-    .categories {
-        flex-direction: row;
-        justify-content: space-around;
-        padding: 0; /* Remove padding for larger screens */
-    }
-
-    .category-box {
-        width: 30%;
-    }
 }
